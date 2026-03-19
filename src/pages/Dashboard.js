@@ -5,6 +5,7 @@ import api from "../api";
 import ExpenseForm from "../components/ExpenseForm";
 import ExpenseList from "../components/ExpenseList";
 import SummaryCards from "../components/SummaryCards";
+import Charts from "../components/Charts";
 
 const CATEGORIES = ["Food","Travel","Shopping","Education","Health","Entertainment","Other"];
 
@@ -59,6 +60,7 @@ export default function Dashboard() {
           <p style={{fontSize:"14px",color:"#888",margin:0}}>Track and manage all your spending</p>
         </div>
         <div style={{marginBottom:"24px"}}><SummaryCards total={total} summary={summary} expenses={expenses}/></div>
+        <Charts summary={summary} expenses={expenses}/>
         <div style={{background:"white",borderRadius:"16px",padding:"16px 20px",marginBottom:"20px",boxShadow:"0 2px 10px rgba(0,0,0,0.05)",display:"flex",gap:"12px",alignItems:"center",flexWrap:"wrap",justifyContent:"space-between"}}>
           <div style={{display:"flex",gap:"10px",flexWrap:"wrap"}}>
             <input type="text" placeholder="🔍  Search..." value={filters.search} onChange={e=>setFilters({...filters,search:e.target.value})}
